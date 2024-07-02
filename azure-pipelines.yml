@@ -23,6 +23,16 @@ stages:
     pool:
       name: MyAgentPool
     steps:
+    - script: |
+        sudo apt-get update
+        sudo apt-get install -y python3.7 python3.7-dev python3.7-venv
+      displayName: 'Install Python 3.7 and dependencies'
+  
+    - script: |
+        python3.7 -m venv venv
+        source venv/bin/activate
+        pip install --upgrade pip
+      displayName: 'Set up Python environment'
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '$(pythonVersion)'
