@@ -46,6 +46,10 @@ stages:
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
+    - script: 
+        flask run
+      workingDirectory: $(projectRoot)
+      displayName: "build app"
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
