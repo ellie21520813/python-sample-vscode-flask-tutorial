@@ -42,8 +42,7 @@ stages:
     - script: |
         pip install setup
         pip install -r requirements.txt
-        export FLASK_APP=app.py
-        flask run
+        flask --app app.py run
       workingDirectory: $(projectRoot)
       displayName: "Install requirements & build app"
 
