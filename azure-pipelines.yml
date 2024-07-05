@@ -39,6 +39,11 @@ stages:
         
       workingDirectory: $(projectRoot)
       displayName: "Install requirements & build app"
+    - script: |
+        pip install pytest pytest-azurepipelines
+        pip install pytest-cov
+        pytest --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml
+      displayName: 'pytest'
      
     - task: ArchiveFiles@2
       displayName: 'Archive files'
