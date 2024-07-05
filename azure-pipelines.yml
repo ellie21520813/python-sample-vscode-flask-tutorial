@@ -43,7 +43,7 @@ stages:
     - script: |
         
         python app.py
-      workingDirectory: $(System.DefaultWorkingDirectory)/home/site/wwwroot
+      workingDirectory: $(System.DefaultWorkingDirectory)/wwwroot
       displayName: "build app"
     - task: ArchiveFiles@2
       displayName: 'Archive files'
