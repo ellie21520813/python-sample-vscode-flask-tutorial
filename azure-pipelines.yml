@@ -41,9 +41,9 @@ stages:
       displayName: "Install requirements & build app"
 
     - script: |
-        cd msdocs-python-flask-webapp-quickstart\app.py
+        cd $(System.DefaultWorkingDirectory)
         python app.py
-      workingDirectory: $(System.DefaultWorkingDirectory)
+     
       displayName: "build app"
     - task: ArchiveFiles@2
       displayName: 'Archive files'
