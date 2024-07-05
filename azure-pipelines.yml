@@ -41,9 +41,9 @@ stages:
       displayName: "Install requirements & build app"
 
     - script: |
-        cd $(System.DefaultWorkingDirectory)/MSDOCS-PYTHON-FLASK-WEBAPP-QUICKSTART
+        
         python app.py
-     
+      workingDirectory: $(projectRoot)
       displayName: "build app"
     - task: ArchiveFiles@2
       displayName: 'Archive files'
