@@ -42,10 +42,12 @@ stages:
     - script: |
         pip install setup
         pip install -r requirements.txt
-        python app.py
+        
       workingDirectory: $(projectRoot)
       displayName: "Install requirements & build app"
 
+    - script: python app.py
+      displayName: "build app"
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
