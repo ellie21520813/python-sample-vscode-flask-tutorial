@@ -27,13 +27,12 @@ stages:
         versionSpec: '$(pythonVersion)'
       displayName: 'Use Python $(pythonVersion)'
   
+    
+
     - script: |
         python3.7 -m venv venv
         source venv/bin/activate
         pip install --upgrade pip
-      displayName: 'Set up Python environment'
-
-    - script: |
         pip install setup
         pip install --target="./.python_packages/lib/site-packages" -r ./requirements.txt
         python app.py
