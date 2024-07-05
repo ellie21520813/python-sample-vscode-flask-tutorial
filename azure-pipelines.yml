@@ -41,7 +41,7 @@ stages:
       displayName: "Install requirements & build app"
 
     - script: |
-        cd $(System.DefaultWorkingDirectory)
+        cd $(System.DefaultWorkingDirectory)/MSDOCS-PYTHON-FLASK-WEBAPP-QUICKSTART
         python app.py
      
       displayName: "build app"
