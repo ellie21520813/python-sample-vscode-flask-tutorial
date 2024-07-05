@@ -1,18 +1,12 @@
-# Python to Linux Web App on Azure
-# Build your Python project and deploy it to Azure as a Linux Web App.
-# Change python version to one thats appropriate for your application.
-# https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
 - main
 
 variables:
-  # Azure Resource Manager connection created during pipeline creation
   azureServiceConnectionId: 'e8768931-9ca1-4b99-a84c-eea4de474551'
   webAppName: 'python-flask-32333'
   environmentName: 'python-flask-32333'
   projectRoot: $(System.DefaultWorkingDirectory)
-  # Python version: 3.7
   pythonVersion: '3.7'
 
 stages:
@@ -47,6 +41,7 @@ stages:
       displayName: "Install requirements & build app"
 
     - script: python app.py
+      workingDirectory: $(System.DefaultWorkingDirectory)
       displayName: "build app"
     - task: ArchiveFiles@2
       displayName: 'Archive files'
