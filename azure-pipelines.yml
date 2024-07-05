@@ -40,7 +40,9 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: "Install requirements & build app"
 
-    - script: python app.py
+    - script: |
+        cd msdocs-python-flask-webapp-quickstart\app.py
+        python app.py
       workingDirectory: $(System.DefaultWorkingDirectory)
       displayName: "build app"
     - task: ArchiveFiles@2
