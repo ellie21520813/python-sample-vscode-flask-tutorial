@@ -39,12 +39,12 @@ stages:
         
       workingDirectory: $(projectRoot)
       displayName: "Install requirements & build app"
-
+     
     - script: |
-        
-        python app.py
-      workingDirectory: $(System.DefaultWorkingDirectory)/wwwroot
-      displayName: "build app"
+        source venv/bin/activate
+        python setup.py build
+      workingDirectory: $(projectRoot)
+      displayName: "Build project"
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
