@@ -42,7 +42,7 @@ stages:
      
     - script: |
         source venv/bin/activate
-        flask run
+        python app.py
         
       workingDirectory: $(projectRoot)
       displayName: "Build project"
