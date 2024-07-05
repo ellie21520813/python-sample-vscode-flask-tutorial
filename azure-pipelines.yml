@@ -41,8 +41,8 @@ stages:
       displayName: "Install requirements & build app"
      
     - script: |
-        source venv/bin/activate
-        python app.py build
+        export set FLASK_APP=hello_app.webapp
+        python3 -m flask run
       workingDirectory: $(projectRoot)
       displayName: "Build project"
     - task: ArchiveFiles@2
