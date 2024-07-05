@@ -42,7 +42,7 @@ stages:
      
     - script: |
         source venv/bin/activate
-        python setup.py build
+        python app.py build
       workingDirectory: $(projectRoot)
       displayName: "Build project"
     - task: ArchiveFiles@2
